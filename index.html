@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contato - Clinica de Olhos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="card">
+      <!-- Logos sociais no topo como botões evidenciados -->
+     
+
+      <img src="./image-profile.png" alt="Foto do Profissional" class="profile-img">
+      <h1>Clinica de Olhos Bosque da Saúde</h1>
+      <p class="subtitle"><strong>Visão é Saúde</strong></p>
+
+    </div>
+
+     <div class="social-icons card" >
+        <a href="https://wa.me/5565999280760" target="_blank" class="social-btn social-whatsapp">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/clinicadeolhosbosquedasaude/" target="_blank" class="social-btn social-instagram">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+        <button id="pixBtn" class="social-btn btn-pix">
+          <div class="pix-icon"><img src="./pix-logo.png?v=1" alt="Pix" onerror="this.onerror=null;this.src='./pix-logo.svg?v=1';"></div>
+          <span>PIX</span>
+        </button>
+  <a href="https://www.google.com/search?sca_esv=08a87188ee7c8cf0&sxsrf=AE3TifM8xSksS7nUbFYZJOUe1zhQy3V6-A:1761848735810&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1TnlerIc2GA4ASPFtu9qqsGhOibf9tMIl28SAth9x-0RBWGHlJkKxjq43wqjSeMOoA6p9SLcYuAa2F7C0RSXgq3CLKQuZ1Yr0JJETsOi6arw-kD_cmzN0ZwAY2wl3ZgzcJ7xyg%3D&q=Cl%C3%ADnica+de+Olhos+Bosque+da+Sa%C3%BAde+Cr%C3%ADticas&sa=X&ved=2ahUKEwj96q6AxsyQAxXeqpUCHYMvOIMQ0bkNegQIIRAD&biw=1920&bih=945&dpr=1#lrd=0x939db1c0520721e1:0xcf571b7cc5a54e6d,3,,,," target="_blank" rel="noopener" class="social-btn btn-google">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+          <span>Avaliar</span>
+          <span class="stars" aria-label="5 estrelas">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+        </a>
+      </div>
+
+    <!-- Card específico para WiFi -->
+    <div class="wifi-card">
+      <div class="wifi-icon"><img src="./wifi.png" alt="WiFi" class="wifi-img"></div>
+      <h3>WiFi Gratuito</h3>
+      <p class="wifi-name">Clínica de Olhos</p>
+      <div class="wifi-password">
+        <span>Senha:</span>
+        <span class="password-text">2F8A144F61</span>
+        <button class="copyBtn wifi-copy" data-key="32932154">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal QR Code -->
+<!-- Modal QR Code -->
+<div id="pixModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Pix QR Codes</h2>
+
+    <div class="qr-container">
+      <div class="qr-item">
+        <img src="./logo-banco.png" alt="Logo Banco " class="qr-img">
+        <p><strong>ANNY CLINICA OFTALMOLOGICA LTDA</strong></p>
+        <p><strong>Chave: </strong>65999280760</p>
+        <button class="copyBtn" data-key="65999280760">Copiar chave</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

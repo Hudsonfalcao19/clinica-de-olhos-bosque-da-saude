@@ -1,0 +1,661 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  background-image: url('./background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  padding: 5rem 0;
+}
+
+/* Fallback para dispositivos móveis que não suportam background-attachment: fixed */
+@media (max-width: 768px) {
+  body {
+    background-image: url('./background-mobilee.png') !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-color: #000 !important;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: rgba(143, 137, 137, 0.055);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+@media (min-width: 480px) {
+  .social-icons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.8rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border: none;
+  background: none;
+  min-height: 80px;
+  justify-content: center;
+}
+
+.social-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.social-instagram {
+  background: linear-gradient(135deg, #e4405f, #833ab4, #fccc63);
+  box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+}
+
+.btn-pix {
+  background: linear-gradient(135deg, #ffffff, #067a33);
+  box-shadow: 0 4px 15px rgba(10, 191, 83, 0.3);
+}
+
+.btn-google {
+  color: #555555;
+  background: linear-gradient(135deg, #cccccc, #ffffff);
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+/* Stars inside the Google review button */
+.btn-google .stars {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+.btn-google .stars .fa-star {
+  color: #fbbc05; /* Google yellow */
+  font-size: 0,1rem;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+}
+
+.social-btn:hover .stars {
+  transform: scale(1.05);
+}
+
+.social-btn img, .pix-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+/* Ensure inline SVGs inside .pix-icon scale correctly */
+.pix-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pix-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fallback para o ícone PIX caso a imagem não carregue */
+.btn-pix .pix-icon {
+  filter: none;
+}
+
+/* Se a imagem do PIX falhar, usar emoji como fallback */
+.btn-pix .pix-icon:after {
+  display: none;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:hover img, .social-btn:hover .pix-icon {
+  transform: scale(1.1);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 4px solid rgba(29, 22, 22, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-bottom: 2px;
+  font-size: 1.0rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle_2 {
+  opacity: 0.9;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Card WiFi */
+.wifi-card {
+ background: rgba(143, 137, 137, 0.055);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.wifi-card:hover {
+  transform: translateY(-3px);
+}
+
+.wifi-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.wifi-icon:hover {
+  transform: scale(1.05);
+}
+
+.wifi-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  /* Fallback caso a imagem não carregue */
+  min-height: 120px;
+  display: block;
+}
+
+.wifi-icon:hover .wifi-img {
+  transform: scale(1.02);
+}
+
+.wifi-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.wifi-name {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.wifi-password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: #ffffff;
+}
+
+.password-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.wifi-copy {
+  background-color: #4CAF50;
+  font-size: 0.9rem;
+}
+
+.wifi-copy:hover {
+  background-color: #45a049;
+}
+
+/* Modal Pix */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100dvh; /* use dynamic viewport to avoid mobile browser chrome overlap */
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.9);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal WiFi QR Code */
+.wifi-qr-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.wifi-qr-content {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95), rgba(46, 125, 50, 0.95));
+  color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.4s ease;
+}
+
+.wifi-qr-amplified {
+  margin: 2rem 0;
+}
+
+.wifi-qr-amplified img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 15px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-wifi-qr {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.close-wifi-qr:hover {
+  background: rgba(18, 202, 55, 0.353);
+  transform: scale(1.1) rotate(90deg);
+}
+
+.scan-instruction {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, rgba(47, 83, 71, 0.95), rgba(30, 226, 42, 0.95));
+  color: #fff;
+  margin: 5vh auto;
+  padding: 2rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  border-radius: 20px;
+  width: 90vw;
+  max-width: 600px;
+  height: auto;
+  max-height: calc(100dvh - 10vh);
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes slideIn {
+  from { 
+    transform: scale(0.8) translateY(-50px);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+/* Botão de fechar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.close:hover {
+  background: rgba(47, 83, 71, 0.3);
+  transform: scale(1.1);
+  rotate: 90deg;
+}
+
+.modal-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-top: 1rem;
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex: 1;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.qr-item {
+  width: 100%;
+  max-width: 450px;
+  min-width: 350px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.qr-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.qr-img {
+  width: 100%;
+  max-width: 300px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+  background: white;
+  padding: 10px;
+}
+
+.qr-img:hover {
+  transform: scale(1.05);
+}
+
+.qr-item p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  opacity: 0.95;
+  font-weight: 600;
+}
+
+/* Botão copiar */
+.copyBtn {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.copyBtn:hover {
+  background: linear-gradient(135deg, #1da851, #0f6b5c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Scrollbar personalizada para o modal */
+.modal-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
+}
+
+/* Responsividade do modal */
+@media (max-width: 768px) {
+  .modal-content {
+    /* use small viewport units and safe-area to avoid overlay by browser bars */
+    margin: clamp(8px, 1.5vh, 16px) auto;
+    width: 96vw;
+    height: auto;
+    max-height: calc(100svh - 2 * clamp(8px, 1.5vh, 16px) - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding: 1.25rem;
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+    border-radius: 15px;
+  }
+  
+  .modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .qr-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    min-height: 300px;
+  }
+  
+  .qr-item {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .qr-img {
+    max-width: 250px;
+  }
+  
+  .close {
+    top: max(12px, calc(env(safe-area-inset-top) + 8px));
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-container {
+    gap: 1.5rem;
+    padding: 0.5rem;
+    min-height: 250px;
+  }
+  
+  .qr-item {
+    padding: 1rem;
+    min-width: 280px;
+  }
+  
+  .qr-img {
+    max-width: 200px;
+  }
+  
+  .copyBtn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  /* WiFi responsivo */
+  .wifi-icon {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .wifi-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Media queries adicionais para WiFi */
+@media (max-width: 768px) {
+  .wifi-card {
+    padding: 1.5rem;
+  }
+  
+  .wifi-icon {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .wifi-img {
+    width: 140px;
+    height: 140px;
+  }
+}
